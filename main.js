@@ -61,7 +61,7 @@ const renderVenues = (venues) => {
         let venueContent = createVenueHTML(venue.name, venue.location, venueImgSrc);
         $venue.append(venueContent);
     });
-    $destination.append(`<h2>${venues[0].location.city}</h2>`);
+    $destination.append(`<h2>${venues[1].location.city}</h2>`);
 }
 
 const renderForecast = (day) => {
@@ -89,7 +89,6 @@ const createVenueHTML = (name, location, iconSource) => {
 }
 
 const createWeatherHTML = (currentDay) => {
-    console.log(currentDay)
     return `<h2>${weekDays[(new Date()).getDay()]}</h2>
           <h2>Temperature: ${kelvinToCel(currentDay.main.temp)}&deg;C</h2>
           <h2>Condition: ${currentDay.weather[0].description}</h2>
